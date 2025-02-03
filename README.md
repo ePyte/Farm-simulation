@@ -4,11 +4,48 @@ The simulation ends when the first Sheep leaves the field.
 
 
 # Visual representation
+The Field with the 10 Sheeps ('A' - 'J') and 5 Dogs ('1' - '5') are represented by characters and visable in the terminal.
+The Sheeps start in the beginning of the field and originally can choose 8 different Fields as a next step.
+The Dogs influence the direction of the Sheeps.
+
+Starting Field example:
 
 ```
-
+|#|#|#|#|#|#|#|#|#|#|#|_|#|#|
+|#| | | | | | | | | | | | |#|
+|#| | | | | | | | | | | | |_|
+|#|4| | | | | | | | | | | |#|
+|#| | | | | | | | | | | | |#|
+|#| | | |1|I|D| |B| | | | |#|
+|#| |3| | |J|A|C| | |2| | |#|
+|#| | | | |G| |E| | | | | |#|
+|#| | | | | | |F|H| | | | |#|
+|_| | | | | | | | | | | | |#|
+|#| | | | | | | | | | | | |#|
+|#| | | | | | | | | | | | |#|
+|#| | | | | | |5| | | | | |#|
+|#|#|#|#|#|_|#|#|#|#|#|#|#|#|
 ```
 
+Game over Field example:
+```
+|#|#|#|#|#|#|#|#|#|_|#|#|#|#|
+|#| | | | | | | |2| | | | |#|
+|#| | | | | | | | | | | | |#|
+|#| | | | | | | |3| | | | |#|
+|#| | | | | | | | | | | | |#|
+|#| | | | | |I|E| |1| | | |#|
+|#| | | | | |F|C| | |4| |D|_|
+|#| | | |G|A| |B| | | | | |#|
+|#| | | | |J| | | | | | | |#|
+|#| | | | | | | |H| | | | |#|
+|#| | | | | | | | | | | | |#|
+|_| | | | | | | | | | | | |#|
+|#| | | | | | | | | | |5| |#|
+|#|#|#|_|#|#|#|#|#|#|#|#|#|#|
+Game Over
+Sheep D has left the area.
+```
 
 # Built with
 - Programming language: Java - 17.0.10
