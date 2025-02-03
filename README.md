@@ -51,7 +51,6 @@ Sheep D has left the area.
 
 # Built with
 - Programming language: Java - 17.0.10
-- Compiler: gcc 9.4.0
 - Opertaing system: Microsoft Windows 10 (10.0.19045)
 - Processor: 6 cores, 12 logical procesors
 
