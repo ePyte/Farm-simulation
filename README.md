@@ -55,4 +55,11 @@ Sheep D has left the area.
 - Processor: 6 cores, 12 logical procesors
 
 
+# Class diagram
+
+![image](https://github.com/user-attachments/assets/55813d4f-ea40-4e34-afdc-8ff60b9595e4)
+
+
+
+
 
