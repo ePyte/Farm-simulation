@@ -33,42 +33,6 @@ public class RenderThread extends Thread{
 
 
 
-    /* private void render(){
-
-        //trying to lock the 3x3 subarray
-        // 
-        List<Lock> listOfLocks = new ArrayList<>();
-        for(int i = 0; i<this.length; ++i){
-            for(int j = 0; j<this.width; ++j){
-                //int waitMS=ran.nextInt(300);//random waitingtimes to avoid deadlocks
-                try {
-                    if(locks[i][j].tryLock(50, TimeUnit.MILLISECONDS)){
-                        listOfLocks.add(locks[i][j]);
-                    }
-                    else{
-                        for(Lock lock : listOfLocks){
-                            lock.unlock();
-                        }
-                        return;
-                    };
-                } catch (InterruptedException e) {
-                    //e.printStackTrace();
-                }
-            }
-        }//
-
-        StringBuilder sb; 
-
-            for(int i = 0; i < this.length; ++i){
-                sb = new StringBuilder("|");
-                for(int j = 0; j < this.width; ++j){
-                    sb.append(this.farm.getField(i, j).toString() + "|");
-                }
-                System.out.println(sb);
-            }
-        
-    }*/
-
     private void render(){
 
         //trying to lock the 3x3 subarray

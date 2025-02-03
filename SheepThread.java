@@ -34,7 +34,6 @@ public class SheepThread extends Thread{
     }
 
     private void  move(){
-
         int sX= sheep.getX();
         int sY = sheep.getY();
         int[] newCoords = {-1, -1};

@@ -35,7 +35,7 @@ public class DogThread extends Thread{
         //idea: to avoid infinite loop all possible positions (8) will be listed in a 2D array
         //the thread will generate a random number between [0-7]
         //if a position is checked, and invalid the value will be overwritten
-        //if all values have been overvritten the thread leaves the cycle and finishes blocking the farm
+        //if all values have been overwritten the thread leaves the cycle and finishes blocking the farm
         int dogX= dog.getX();
         int dogY = dog.getY();
         int[][] possibleOffsets = {{-1,1}, {0,1}, {1,1},{-1,0}, {1,0}, {-1,-1}, {0,-1}, {1,-1}};
