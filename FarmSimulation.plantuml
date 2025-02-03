@@ -1,0 +1,152 @@
+
+@startuml FarmSimulation Diagram
+
+class Field <<interface>>
+{
+
+}
+
+
+class Dog
+{
+    - id: String
+    - xCord: int
+    - yCord: int
+
+    + Dog(String, int, int)
+
+    + toString():String
+}
+
+class Empty
+{
+    + toString():String
+}
+
+class Gate
+{
+    + toString():String
+}
+
+class Wall
+{
+    + toString():String
+}
+
+class Sheep
+{
+    - id: String
+    - xCord: int
+    - yCord: int
+
+    + Sheep(String, int, int)
+
+    + toString():String
+}
+
+class Main
+{
+    + {static} main():void
+}
+
+class Farm
+{
+    - farm: Field[][]
+    - width: int
+    - length: int
+    - numOfDogs: int
+    - numOfSheeps: int
+    - nameOfDogs: List<String>
+    - listOfDogs: List<Dog>
+    - nameOfSheeps: List<String>
+    - listOfSheeps: List<Sheep>
+    - locks: Lock[][]
+    - ran: Random
+
+    + Farm()
+
+    - initalizeFarm(): void
+    - initalizeEmptyFields(): void
+    - initalizeWalls(): void
+    - initalizeGates(): void
+    - initalizeDogs(): void
+    - initalizeSheeps(): void
+    - genereateValidCoordForDogs(int[]):void
+    - genereateValidStartCoordForSheeps(nt[]): void
+    - initLocks(): void
+    + threadOperations(): void
+
+}
+
+
+class DogThread<extends Thread> {
+  - farm: Farm
+  - id: String
+  - dog: Dog
+  - ran: Random
+  - flag: AtomicBoolean
+  - locks: Lock[][]
+
+  + DogThread(Farm, Dog, AtomicBoolean, Lock[][])
+
+  + run(): void
+  - move(): void
+  - checkPossibleOffset(int[][]): boolean
+  - checkField(Field, int, int): boolean
+  - isDogArea(int, int): boolean
+  - dogWaits(): void
+
+}
+
+
+class SheepThread<extends Thread> {
+  - farm: Farm
+  - id: String
+  - sheep: Sheep
+  - ran: Random
+  - flag: AtomicBoolean
+  - winner: StringBuilder
+  - locks: Lock[][]
+
+  + SheepThread(Farm, Sheep, AtomicBoolean, StringBuilder, Lock[][])
+
+  + run(): void
+  - move(): void
+
+}
+
+class RenderThread<extends Thread> {
+  - farm: Farm
+  - length: int
+  - width: int
+  - flag: AtomicBoolean
+  - locks: Lock[][]
+  - ran: Random
+
+  + RenderThread(Farm, int, int, AtomicBoolean, StringBuilder, Lock[][])
+
+  + run(): void
+  - render(): void
+  - renderWaits(): void
+
+}
+
+
+
+Field <|-- Dog
+Field <|-- Sheep
+Field <|-- Empty
+Field <|-- Gate
+Field <|-- Wall
+
+Farm *-- Field
+
+Farm -- Main
+
+Farm -- DogThread
+Farm -- SheepThread
+Farm -- RenderThread
+
+
+@enduml
+
